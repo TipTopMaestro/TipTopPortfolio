@@ -1,0 +1,16 @@
+{
+  "name": "Monch Walter Quines | Portfolio",
+  "short_name": "MWQ Portfolio",
+  "description": "Portfolio of Monch Walter P. Quines, a BSIT Student & Web Developer.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#00f2ff",
+  "icons": [
+    {
+      "src": "img/mon.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
