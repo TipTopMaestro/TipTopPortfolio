@@ -34,7 +34,7 @@ createApp({
                 skills: [
                     { name: 'Git', icon: 'git' },
                     { name: 'Figma', icon: 'figma' },
-                    { name: 'VS Code', icon: 'visualstudiocode' },
+                    { name: 'VS Code', icon: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg' },
                     { name: 'Postman', icon: 'postman' }
                 ]
             }
@@ -70,23 +70,30 @@ createApp({
 
         const githubRepos = ref([
             {
-                title: 'Ambulance Routing Application Using Bellman Ford Algorithm',
-                description: 'Personal profile repository and primary development hub on GitHub.',
+                title: 'AMBULANCE ROUTING APPLICATION USING BELLMANFORD ALGORITHM',
+                description: 'An application to calculate shortest path using bellmanford algorithm for emergency services.',
                 url: 'https://github.com/TipTopMaestro/ARA-Ambulance_Routing_Application',
                 image: 'img/ARA.png'
             },
             {
                 title: 'IC LSG VOTING SYSTEM DATABASE OPTIMIZATION',
-                description: 'Exploring diverse repositories and collaborative open-source contributions.',
+                description: 'Database optimization using advance database techniques.',
                 url: 'https://github.com/TipTopMaestro/icsa-online-voting-system',
                 image: 'img/ICVOTING.png'
                 
             },
             {
                 title: 'SMART CAMPUS ENERGY SYSTEM',
-                description: 'Exploring diverse repositories and collaborative open-source contributions.',
+                description: 'An application for managing and appliance automation for energy management.',
                 url: 'https://github.com/TipTopMaestro/Smart-Campus-Energy-System',
                 image: 'img/SCES.png'
+                
+            },
+            {
+                title: 'BELLMAN FORD ALGORITHM VISUALIZER',
+                description: 'A web app for bellmanford algorithm visualization.',
+                url: 'https://github.com/TipTopMaestro/Bellman-Ford-Visualizer',
+                image: 'img/BFA.png'
                 
             }
         ]);
@@ -94,7 +101,7 @@ createApp({
         const contactLinks = ref([
             { label: 'Email', url: 'mailto:quinesmonch@gmail.com', icon: 'fa-solid fa-envelope' },
             { label: 'Mobile', url: 'tel:09705593851', icon: 'fa-solid fa-phone' },
-            { label: 'GitHub', url: 'https://github.com/TipTopMaestro', icon: 'github/white' }
+            { label: 'GitHub', url: 'https://github.com/TipTopMaestro', icon: 'github' }
         ]);
 
         // Typing Animation Logic

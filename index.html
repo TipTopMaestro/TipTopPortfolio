@@ -61,20 +61,20 @@
                         <div class="skills-list">
                             <div v-for="skill in group.skills" :key="skill.name" class="skill-tag">
                                 <i v-if="skill.icon.startsWith('fa-')" :class="skill.icon" style="font-size: 32px;"></i>
-                                <img v-else :src="skill.icon.includes('.') ? 'img/' + skill.icon : 'https://cdn.simpleicons.org/' + skill.icon" :alt="skill.name">
+                                <img v-else :src="skill.icon.startsWith('http') ? skill.icon : (skill.icon.includes('.') ? 'img/' + skill.icon : 'https://cdn.simpleicons.org/' + skill.icon)" :alt="skill.name">
                                 <span style="font-size: 11px; font-weight: 600; text-align: center;">{{ skill.name }}</span>
                             </div>
                         </div>
-                        </div>
+                    </div>
 
-                        <h3 style="margin: 30px 0 15px; font-size: 1rem; color: var(--accent-neon); text-transform: uppercase; letter-spacing: 1px;" class="reveal">Interests</h3>
-                        <div class="skills-list reveal">
+                    <h3 style="margin: 30px 0 15px; font-size: 1rem; color: var(--accent-neon); text-transform: uppercase; letter-spacing: 1px;" class="reveal">Interests</h3>
+                    <div class="skills-list reveal">
                         <div v-for="interest in interests" :key="interest.name" class="skill-tag">
                             <i v-if="interest.icon.startsWith('fa-')" :class="interest.icon" style="font-size: 32px;"></i>
-                            <img v-else :src="interest.icon.includes('.') ? 'img/' + interest.icon : 'https://cdn.simpleicons.org/' + interest.icon" :alt="interest.name">
+                            <img v-else :src="interest.icon.startsWith('http') ? interest.icon : (interest.icon.includes('.') ? 'img/' + interest.icon : 'https://cdn.simpleicons.org/' + interest.icon)" :alt="interest.name">
                             <span style="font-size: 11px; font-weight: 600; text-align: center;">{{ interest.name }}</span>
                         </div>
-                        </div>
+                    </div>
                 </div>
             </div>
         </section>
