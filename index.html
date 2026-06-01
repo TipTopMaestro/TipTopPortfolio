@@ -9,11 +9,7 @@
     <meta property="og:title" content="Monch Quines | Portfolio">
     <meta property="og:description" content="BSIT Student & Aspiring Web Developer from Davao Del Norte State College.">
     <meta property="og:image" content="img/mon.jpg">
-    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style.css">
-    <link rel="preload" href="main.js" as="script">
-    <link rel="preload" href="style.css" as="style">
-    <link rel="preload" href="img/mon.jpg" as="image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -35,7 +31,7 @@
         <nav class="navbar">
             <a href="#home">Home</a>
             <a href="#about">About</a>
-            <a href="#projects">Projects</a>
+            <a href="#works">Works</a>
             <a href="#contact">Contact</a>
         </nav>
 
@@ -85,7 +81,7 @@
 
         
         <!-- GitHub Section -->
-        <section id="projects" class="reveal ">
+        <section id="works" class="reveal ">
             <h2 class="section-title">Recent <span>Works</span></h2>
             <div class="grid two-columns">
                 <div v-for="repo in githubRepos" :key="repo.title" class="card reveal">
@@ -106,7 +102,7 @@
         </section>
         
         <!-- Projects Section -->
-        <section id="oldprojects" class="reveal">
+        <section id="archive" class="reveal">
             <h2 class="section-title">Last Year's <span>Works</span></h2>
             <div class="grid two-columns">
                 <div v-for="project in featuredProjects" :key="project.title" class="card reveal">
