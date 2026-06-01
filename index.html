@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monch Walter Quines | Portfolio</title>
+    <meta name="description" content="Portfolio of Monch Walter P. Quines, a BSIT Student & Web Developer specializing in elegant digital experiences.">
+    <meta name="keywords" content="Monch Quines, Portfolio, Web Developer, BSIT, Davao Del Norte State College">
+    <meta property="og:title" content="Monch Quines | Portfolio">
+    <meta property="og:description" content="BSIT Student & Aspiring Web Developer from Davao Del Norte State College.">
+    <meta property="og:image" content="img/mon.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+</head>
+<body>
+    <div class="custom-cursor"></div>
+    <div class="background-container">
+        <div class="grid-overlay"></div>
+        <div class="grain-overlay"></div>
+        <div class="blob-wrapper"><div class="glow-blob blob-1"></div></div>
+        <div class="blob-wrapper"><div class="glow-blob blob-2"></div></div>
+        <div class="blob-wrapper"><div class="glow-blob blob-3"></div></div>
+    </div>
+    <div id="app">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <!-- Hero Section -->
+        <header class="hero reveal" id="home">
+            <div class="hero-status">Available for projects</div>
+            <h1>Monch Walter Quines</h1>
+            <p style="font-size: clamp(1.2rem, 4vw, 2rem); min-height: 1.5em; font-weight: 300; font-family: 'Poppins', sans-serif;">
+                I'm a <span class="typing-text" style="color: var(--accent-neon); font-weight: 700;">{{ currentRole }}</span><span class="cursor">|</span>
+            </p>
+            <p style="max-width: 600px; margin-top: 20px; color: var(--text-secondary);">Information Technology Student & Aspiring Developer from Davao Del Norte State College.</p>
+        </header>
+
+        <!-- About Section -->
+        <section id="about" class="reveal">
+            <h2 class="section-title">About <span>Me</span></h2>
+            <div class="about-content">
+                <div class="about-img reveal">
+                    <img src="img/mon.jpg" alt="Monch Walter P. Quines">
+                </div>
+                <div class="about-text">
+                    <p style="font-size: 1.2rem; margin-bottom: 20px;">I'm Monch Walter P. Quines, a second-year BSIT Student at Davao Del Norte State College. Passionate about building better system for complex and inefficient workflows.</p>
+                    <p style="font-size: 1.2rem; margin-bottom: 20px;">Currently trying to learn new techstack during school break.</p>
+                    
+                    <div v-for="group in skillGroups" :key="group.name" style="margin-bottom: 25px;" class="reveal">
+                        <h3 style="margin-bottom: 12px; font-size: 1rem; color: var(--accent-neon); text-transform: uppercase; letter-spacing: 1px;">{{ group.name }}</h3>
+                        <div class="skills-list">
+                            <div v-for="skill in group.skills" :key="skill.name" class="skill-tag">
+                                <i v-if="skill.icon.startsWith('fa-')" :class="skill.icon" style="font-size: 32px;"></i>
+                                <img v-else :src="skill.icon.includes('.') ? 'img/' + skill.icon : 'https://cdn.simpleicons.org/' + skill.icon" :alt="skill.name">
+                                <span style="font-size: 11px; font-weight: 600; text-align: center;">{{ skill.name }}</span>
+                            </div>
+                        </div>
+                        </div>
+
+                        <h3 style="margin: 30px 0 15px; font-size: 1rem; color: var(--accent-neon); text-transform: uppercase; letter-spacing: 1px;" class="reveal">Interests</h3>
+                        <div class="skills-list reveal">
+                        <div v-for="interest in interests" :key="interest.name" class="skill-tag">
+                            <i v-if="interest.icon.startsWith('fa-')" :class="interest.icon" style="font-size: 32px;"></i>
+                            <img v-else :src="interest.icon.includes('.') ? 'img/' + interest.icon : 'https://cdn.simpleicons.org/' + interest.icon" :alt="interest.name">
+                            <span style="font-size: 11px; font-weight: 600; text-align: center;">{{ interest.name }}</span>
+                        </div>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- GitHub Section -->
+        <section id="github" class="reveal ">
+            <h2 class="section-title">Recent <span>Works</span></h2>
+            <div class="grid two-columns">
+                <div v-for="repo in githubRepos" :key="repo.title" class="card reveal">
+                    <div class="card-image-wrapper">
+                        <img :src="repo.image" :alt="repo.title">
+                    </div>
+                    <h3>{{ repo.title }}</h3>
+                    <p>{{ repo.description }}</p>
+                    <div class="card-footer">
+                        <div class="project-links">
+                            <a :href="repo.url" target="_blank">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> View Repository
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects" class="reveal">
+            <h2 class="section-title">Last Year's <span>Works</span></h2>
+            <div class="grid two-columns">
+                <div v-for="project in featuredProjects" :key="project.title" class="card reveal">
+                    <div class="card-image-wrapper">
+                        <img :src="project.image" :alt="project.title">
+                    </div>
+                    <h3>{{ project.title }}</h3>
+                    <p>{{ project.description }}</p>
+                    
+                    <div class="skills-list" style="margin-bottom: 20px;">
+                        <span v-for="tag in project.tags" :key="tag" class="tag">
+                            {{ tag }}
+                        </span>
+                    </div>
+        
+                    <div class="card-footer">
+                        <div class="project-links">
+                            <a :href="project.liveLink" target="_blank">Live Demo</a>
+                            <a :href="project.codeLink" target="_blank">View Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <footer id="contact" class="reveal">
+            <h2 style="font-size: 4rem; font-weight: 900; letter-spacing: -2px; margin-bottom: 10px;">Let's work <span>together</span></h2>
+            <p style="color: var(--text-secondary); font-size: 1.2rem;">Have a project in mind? I'd love to help.</p>
+            <a href="mailto:quinesmonch@gmail.com" class="cta-button magnetic">Get In Touch</a>
+            
+            <div class="contact-links" style="margin-top: 60px;">
+                <a v-for="link in contactLinks" :key="link.label" :href="link.url" target="_blank">
+                    <i :class="link.icon"></i>
+                    {{ link.label }}
+                </a>
+            </div>
+            <p style="margin-top: 100px; font-size: 0.8rem; color: #444;">© 2026 Monch Quines. Designed for the future.</p>
+        </footer>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
