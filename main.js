@@ -101,7 +101,7 @@ createApp({
         const contactLinks = ref([
             { label: 'Email', url: 'mailto:quinesmonch@gmail.com', icon: 'fa-solid fa-envelope' },
             { label: 'Mobile', url: 'tel:09705593851', icon: 'fa-solid fa-phone' },
-            { label: 'GitHub', url: 'https://github.com/TipTopMaestro', icon: 'github' }
+            { label: 'GitHub', url: 'https://github.com/TipTopMaestro', icon: 'fa-brands fa-github' }
         ]);
 
         // Typing Animation Logic
